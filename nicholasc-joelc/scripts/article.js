@@ -26,9 +26,7 @@ Article.prototype.toHtml = function() {
   // DONE: Use the method that Handlebars gave you to return your filled-in html template for THIS article.
 
   let context = this;
-  console.log(context)
   let $html = template(context);
-  console.log($html);
   $('#articles').append($html)
 
 
@@ -37,7 +35,7 @@ Article.prototype.toHtml = function() {
 };
 
 // COMMENT: Why are there parentheses around "(a,b)" in the .sort() method, but not around the "articleObject" or "article" arguments in the .forEach() methods?
-// PUT YOUR RESPONSE HERE
+// The parentheses specifiy that the function takes in both parameters a and b. With just one variable like article or articleObject, it knows to take that in as a parameter without the parentheses.
 rawData.sort((a,b) => {
   return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
 });
